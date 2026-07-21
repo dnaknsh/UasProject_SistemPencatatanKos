@@ -1,6 +1,4 @@
-// Validasi sisi client menggunakan Bootstrap validation API.
-// Mencegah form dikirim jika ada input yang kosong / tidak valid,
-// sebagai lapisan pertama sebelum validasi ulang dilakukan di sisi server (app.py).
+
 (function () {
     "use strict";
 
