@@ -1,73 +1,119 @@
-/* Custom Pink Neon Theme */
+/* Anya Forger (Spy x Family) Theme */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap');
+
 :root {
-    --pink-primary: #ff2a85;
-    --pink-neon: #ff007f;
-    --pink-glow: #ff75c3;
-    --bg-dark: #121212;
-    --card-bg: #1e1e24;
+    --anya-pink-soft: #ffd3e2;     /* Warna rambut Anya (Soft Pink) */
+    --anya-pink-main: #ff9ebb;     /* Pink pastel cerah */
+    --eden-black: #1e1b2e;         /* Seragam Eden Academy (Dark Navy/Black) */
+    --eden-gold: #f4c430;          /* Aksen Emas/Kuning Eden */
+    --bg-creamy-white: #fff9fb;    /* Latar belakang putih pink sangat lembut */
+    --text-dark: #2d232e;          /* Warna teks utama */
 }
 
 body {
-    background-color: #0f0c1b !important;
-    color: #f8f9fa !important;
-    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-creamy-white) !important;
+    color: var(--text-dark) !important;
+    font-family: 'Nunito', sans-serif;
+    background-image: radial-gradient(var(--anya-pink-soft) 1px, transparent 1px);
+    background-size: 20px 20px; /* Pola bintik-bintik manis ala anime */
 }
 
-/* Card Styling dengan Border Glowing */
-.card {
-    background-color: var(--card-bg) !important;
-    border: 2px solid var(--pink-primary) !important;
-    border-radius: 16px !important;
-    box-shadow: 0 0 15px rgba(255, 42, 133, 0.3) !important;
+/* Headings dengan Font Ceria */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Fredoka', cursive;
+    color: var(--eden-black) !important;
+}
+
+/* Navbar Bergaris Eden Academy */
+.navbar-dark {
+    background: var(--eden-black) !important;
+    border-bottom: 4px solid var(--eden-gold) !important;
+}
+
+.navbar-dark .nav-link {
     color: #ffffff !important;
+    font-weight: 600;
+}
+
+.navbar-dark .nav-link:hover {
+    color: var(--anya-pink-main) !important;
+}
+
+/* Card Aesthetic ala Anya (Seragam Eden + Rambut Pink) */
+.card {
+    background-color: #ffffff !important;
+    border: 3px solid var(--anya-pink-soft) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 8px 20px rgba(255, 158, 187, 0.25) !important;
+    color: var(--text-dark) !important;
+    overflow: hidden;
 }
 
 .card-header {
-    background-color: transparent !important;
-    border-bottom: 1px solid rgba(255, 42, 133, 0.3) !important;
-    color: var(--pink-glow) !important;
+    background: linear-gradient(135deg, var(--anya-pink-soft), #ffe8f0) !important;
+    border-bottom: 2px dashed var(--anya-pink-main) !important;
+    color: var(--eden-black) !important;
+    font-weight: bold;
 }
 
-/* Input Fields */
+/* Form Controls (Soft & Cute Input) */
 .form-control, .form-select {
-    background-color: #2a2a35 !important;
-    border: 1px solid #444 !important;
-    color: #fff !important;
-    border-radius: 8px !important;
+    background-color: #fff9fb !important;
+    border: 2px solid var(--anya-pink-soft) !important;
+    color: var(--text-dark) !important;
+    border-radius: 12px !important;
+    padding: 10px 15px;
 }
 
 .form-control:focus, .form-select:focus {
-    border-color: var(--pink-neon) !important;
-    box-shadow: 0 0 10px var(--pink-neon) !important;
+    border-color: var(--anya-pink-main) !important;
+    box-shadow: 0 0 8px rgba(255, 158, 187, 0.6) !important;
 }
 
-/* Tombol Pink Neon dengan Efek Glow & Click Event */
+/* Tombol Akses (Pink Anya & Emas Eden) dengan Efek Glow Membal */
 .btn-primary, .btn-success {
-    background: linear-gradient(135deg, #ff007f, #ff52a0) !important;
-    border: none !important;
-    color: #fff !important;
+    background: linear-gradient(135deg, #ff8dae, #ff6b95) !important;
+    border: 2px solid #fff !important;
+    color: #ffffff !important;
     font-weight: bold;
-    border-radius: 8px !important;
-    transition: all 0.2s ease-in-out !important;
-    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5) !important;
+    border-radius: 25px !important;
+    padding: 8px 24px;
+    box-shadow: 0 4px 12px rgba(255, 107, 149, 0.4) !important;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* Efek Hover (Nyalanya makin terang) */
+/* Hover Efek Bercahaya Soft Pink */
 .btn-primary:hover, .btn-success:hover {
-    box-shadow: 0 0 20px var(--pink-neon), 0 0 30px var(--pink-glow) !important;
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ff6b95, #ff4077) !important;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 15px var(--anya-pink-main), 0 6px 18px rgba(255, 107, 149, 0.6) !important;
 }
 
-/* Efek Pas Di-Klik (Active Effect) */
+/* Efek Klik 'Bounce' Membal */
 .btn-primary:active, .btn-success:active {
-    transform: scale(0.96) !important;
-    box-shadow: 0 0 35px #ff007f, 0 0 50px #ff007f !important;
+    transform: scale(0.95) !important;
+    box-shadow: 0 0 25px #ff4077, 0 2px 8px rgba(255, 107, 149, 0.8) !important;
 }
 
-/* Table Dark Aesthetic */
+/* Tabel Bergaya Clean & Pink Soft */
 .table {
-    color: #fff !important;
+    color: var(--text-dark) !important;
 }
+
 .table-dark {
-    background-color: #251228 !important;
+    background-color: var(--eden-black) !important;
+    color: var(--eden-gold) !important;
+}
+
+/* Badges Status Pembayaran */
+.badge.bg-success {
+    background-color: #62d2a2 !important;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.badge.bg-warning {
+    background-color: var(--eden-gold) !important;
+    color: var(--eden-black) !important;
+    border-radius: 10px;
 }
