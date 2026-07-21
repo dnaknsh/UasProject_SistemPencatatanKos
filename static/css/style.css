@@ -1,0 +1,100 @@
+:root {
+    --brand-primary: #2f6f4f;
+    --brand-primary-dark: #1f5137;
+    --brand-accent: #e0a458;
+    --brand-bg: #f5f7f5;
+}
+
+body {
+    background-color: var(--brand-bg);
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-navbar {
+    background: linear-gradient(90deg, var(--brand-primary-dark), var(--brand-primary));
+}
+
+.app-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.app-navbar .nav-link.active,
+.app-navbar .nav-link:hover {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary) 60%, var(--brand-accent));
+}
+
+.login-card {
+    max-width: 420px;
+    width: 100%;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+}
+
+.stat-card {
+    border: none;
+    border-radius: 0.75rem;
+    color: #fff;
+    box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+.stat-card .stat-icon {
+    font-size: 2rem;
+    opacity: 0.85;
+}
+
+.stat-card.bg-total { background: linear-gradient(135deg, #2f6f4f, #4c9a72); }
+.stat-card.bg-terisi { background: linear-gradient(135deg, #1f5137, #2f6f4f); }
+.stat-card.bg-kosong { background: linear-gradient(135deg, #b5651d, #e0a458); }
+.stat-card.bg-income { background: linear-gradient(135deg, #1a5276, #2e86c1); }
+.stat-card.bg-warning-belum { background: linear-gradient(135deg, #a93226, #cb4335); }
+
+.card-section {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06);
+}
+
+.table thead th {
+    background-color: var(--brand-primary);
+    color: #fff;
+    border: none;
+    white-space: nowrap;
+}
+
+.badge-status-terisi { background-color: var(--brand-primary); }
+.badge-status-kosong { background-color: var(--brand-accent); color: #4a2e00; }
+.badge-status-lunas { background-color: #2f6f4f; }
+.badge-status-belum { background-color: #c0392b; }
+
+.simple-bar-track {
+    background-color: #e9ecef;
+    border-radius: 0.35rem;
+    overflow: hidden;
+    height: 1.5rem;
+}
+
+.simple-bar-fill {
+    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    height: 100%;
+    color: #fff;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    white-space: nowrap;
+}
+
+.was-validated .form-control:invalid,
+.form-control.is-invalid {
+    border-color: #dc3545;
+}

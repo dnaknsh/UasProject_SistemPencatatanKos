@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Data Pembayaran Kos</h2>
+    <a href="{{ url_for('tambah_pembayaran') }}" class="btn btn-primary">+ Catat Pembayaran Baru</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-striped align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Penghuni</th>
+                    <th>No. Kamar</th>
+                    <th>Tanggal Bayar</th>
+                    <th>Bulan Tagihan</th>
+                    <th>Jumlah (Rp)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if pembayaran %}
+                    {% for p in pembayaran %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><strong>{{ p.nama }}</strong></td>
+                        <td><span class="badge bg-secondary">{{ p.no_kamar }}</span></td>
+                        <td>{{ p.tanggal_bayar }}</td>
+                        <td>{{ p.bulan_tagihan }}</td>
+                        <td>Rp {{ "{:,.0f}".format(p.jumlah) }}</td>
+                        <td>
+                            {% if p.status == 'Lunas' %}
+                                <span class="badge bg-success">Lunas</span>
+                            {% else %}
+                                <span class="badge bg-warning text-dark">Belum Lunas</span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="7" class="text-center py-4 text-muted">Belum ada data pembayaran yang dicatat.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

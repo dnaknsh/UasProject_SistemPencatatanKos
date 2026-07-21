@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center text-center mt-5">
+    <div class="col-md-8">
+        <div class="p-5 bg-white rounded-3 shadow-sm">
+            <h1 class="display-5 fw-bold text-primary">Sistem Pencatatan Kos</h1>
+            <p class="fs-5 text-muted mt-3">
+                Selamat datang di sistem manajemen dan pencatatan pembayaran kos.
+            </p>
+            <hr class="my-4">
+            <p class="text-secondary">Silakan masuk ke portal admin untuk mengelola data penghuni dan transaksi pembayaran.</p>
+            <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg px-4 mt-2">Masuk ke Portal Admin</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

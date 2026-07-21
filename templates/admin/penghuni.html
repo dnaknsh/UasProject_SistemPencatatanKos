@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Data Penghuni Kos</h2>
+    <a href="{{ url_for('tambah_penghuni') }}" class="btn btn-primary">+ Tambah Penghuni Baru</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <table class="table table-striped align-middle mb-0">
+            <thead class="table-dark">
+                <tr>
+                    <th>No</th>
+                    <th>Nama Penghuni</th>
+                    <th>No. Kamar</th>
+                    <th>No. HP / WhatsApp</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if penghuni %}
+                    {% for p in penghuni %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><strong>{{ p.nama }}</strong></td>
+                        <td><span class="badge bg-secondary">Kamar {{ p.no_kamar }}</span></td>
+                        <td>{{ p.no_hp }}</td>
+                        <td>
+                            <a href="{{ url_for('hapus_penghuni', id=p.id) }}" 
+                               class="btn btn-danger btn-sm" 
+                               onclick="return confirm('Apakah Anda yakin ingin menghapus data {{ p.nama }}? Data pembayaran terkait juga akan terhapus.');">
+                                Hapus
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="5" class="text-center py-4 text-muted">Belum ada data penghuni kos.</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="mb-4">Dashboard Admin</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Penghuni</h5>
+                <p class="card-text fs-3">{{ total_penghuni }} Orang</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Pemasukan</h5>
+                <p class="card-text fs-3">Rp {{ "{:,.0f}".format(total_pembayaran) }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Pembayaran Terbaru</h4>
+<table class="table table-striped bg-white">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Kamar</th>
+            <th>Bulan</th>
+            <th>Jumlah</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in pembayaran_terakhir %}
+        <tr>
+            <td>{{ p.nama }}</td>
+            <td>{{ p.no_kamar }}</td>
+            <td>{{ p.bulan_tagihan }}</td>
+            <td>Rp {{ "{:,.0f}".format(p.jumlah) }}</td>
+            <td><span class="badge bg-{{ 'success' if p.status == 'Lunas' else 'danger' }}">{{ p.status }}</span></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
