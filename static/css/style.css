@@ -1,100 +1,73 @@
+/* Custom Pink Neon Theme */
 :root {
-    --brand-primary: #2f6f4f;
-    --brand-primary-dark: #1f5137;
-    --brand-accent: #e0a458;
-    --brand-bg: #f5f7f5;
+    --pink-primary: #ff2a85;
+    --pink-neon: #ff007f;
+    --pink-glow: #ff75c3;
+    --bg-dark: #121212;
+    --card-bg: #1e1e24;
 }
 
 body {
-    background-color: var(--brand-bg);
-    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0f0c1b !important;
+    color: #f8f9fa !important;
+    font-family: 'Poppins', sans-serif;
 }
 
-.app-navbar {
-    background: linear-gradient(90deg, var(--brand-primary-dark), var(--brand-primary));
+/* Card Styling dengan Border Glowing */
+.card {
+    background-color: var(--card-bg) !important;
+    border: 2px solid var(--pink-primary) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 0 15px rgba(255, 42, 133, 0.3) !important;
+    color: #ffffff !important;
 }
 
-.app-navbar .nav-link {
-    color: rgba(255, 255, 255, 0.85);
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid rgba(255, 42, 133, 0.3) !important;
+    color: var(--pink-glow) !important;
 }
 
-.app-navbar .nav-link.active,
-.app-navbar .nav-link:hover {
-    color: #ffffff;
-    font-weight: 600;
+/* Input Fields */
+.form-control, .form-select {
+    background-color: #2a2a35 !important;
+    border: 1px solid #444 !important;
+    color: #fff !important;
+    border-radius: 8px !important;
 }
 
-.login-wrapper {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary) 60%, var(--brand-accent));
+.form-control:focus, .form-select:focus {
+    border-color: var(--pink-neon) !important;
+    box-shadow: 0 0 10px var(--pink-neon) !important;
 }
 
-.login-card {
-    max-width: 420px;
-    width: 100%;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.25);
+/* Tombol Pink Neon dengan Efek Glow & Click Event */
+.btn-primary, .btn-success {
+    background: linear-gradient(135deg, #ff007f, #ff52a0) !important;
+    border: none !important;
+    color: #fff !important;
+    font-weight: bold;
+    border-radius: 8px !important;
+    transition: all 0.2s ease-in-out !important;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.5) !important;
 }
 
-.stat-card {
-    border: none;
-    border-radius: 0.75rem;
-    color: #fff;
-    box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.08);
+/* Efek Hover (Nyalanya makin terang) */
+.btn-primary:hover, .btn-success:hover {
+    box-shadow: 0 0 20px var(--pink-neon), 0 0 30px var(--pink-glow) !important;
+    transform: translateY(-2px);
 }
 
-.stat-card .stat-icon {
-    font-size: 2rem;
-    opacity: 0.85;
+/* Efek Pas Di-Klik (Active Effect) */
+.btn-primary:active, .btn-success:active {
+    transform: scale(0.96) !important;
+    box-shadow: 0 0 35px #ff007f, 0 0 50px #ff007f !important;
 }
 
-.stat-card.bg-total { background: linear-gradient(135deg, #2f6f4f, #4c9a72); }
-.stat-card.bg-terisi { background: linear-gradient(135deg, #1f5137, #2f6f4f); }
-.stat-card.bg-kosong { background: linear-gradient(135deg, #b5651d, #e0a458); }
-.stat-card.bg-income { background: linear-gradient(135deg, #1a5276, #2e86c1); }
-.stat-card.bg-warning-belum { background: linear-gradient(135deg, #a93226, #cb4335); }
-
-.card-section {
-    border: none;
-    border-radius: 0.75rem;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.06);
+/* Table Dark Aesthetic */
+.table {
+    color: #fff !important;
 }
-
-.table thead th {
-    background-color: var(--brand-primary);
-    color: #fff;
-    border: none;
-    white-space: nowrap;
-}
-
-.badge-status-terisi { background-color: var(--brand-primary); }
-.badge-status-kosong { background-color: var(--brand-accent); color: #4a2e00; }
-.badge-status-lunas { background-color: #2f6f4f; }
-.badge-status-belum { background-color: #c0392b; }
-
-.simple-bar-track {
-    background-color: #e9ecef;
-    border-radius: 0.35rem;
-    overflow: hidden;
-    height: 1.5rem;
-}
-
-.simple-bar-fill {
-    background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
-    height: 100%;
-    color: #fff;
-    font-size: 0.75rem;
-    display: flex;
-    align-items: center;
-    padding-left: 0.5rem;
-    white-space: nowrap;
-}
-
-.was-validated .form-control:invalid,
-.form-control.is-invalid {
-    border-color: #dc3545;
+.table-dark {
+    background-color: #251228 !important;
 }
